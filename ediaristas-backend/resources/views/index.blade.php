@@ -18,7 +18,7 @@
         <tr>
           <th scope="row">{{ $diarista->id }}</th>
           <th>{{ $diarista->nome_completo }}</th>
-          <th>{{ $diarista->telefone }}</th>
+          <th>{{ \Clemdesign\PhpMask\Mask::apply($diarista->telefone, '(00) 00000-0000') }}</th>
           <td>
             <a href="{{ route('diaristas.edit', $diarista) }}" class="btn btn-primary">Atualizar</a>
             <a href="{{ route('diaristas.destroy', $diarista) }}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja apagar?')">Apagar</a>

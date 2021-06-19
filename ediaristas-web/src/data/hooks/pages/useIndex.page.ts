@@ -27,11 +27,12 @@ export default function useIndex() {
 
       setDiaristas(data.diaristas);
       setDiaristasRestantes(data.quantidade_diaristas);
+      setBuscaFeita(true);
     } catch (error) {
       setError("CEP não encontrado");
+      setBuscaFeita(false);
     }
     setCarregando(false);
-    setBuscaFeita(true);
   }
 
   return {
